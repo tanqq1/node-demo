@@ -12,6 +12,42 @@ function tConsole(err, data, errText = "执行失败", succText="执行成功") 
 
 const ofd = fs.openSync('./info.js','r+')
 
+// 文件流写入
+// 将文件流写入input.txt文件中
+const writeStream = fs.createWriteStream('./input.txt');
+writeStream.write(Buffer.from("hello this is  a test"),{encoding:'utf8', flags:'a',}, err => {
+    tConsole(err,'','写入文件失败','写入文件成功啦')
+    console.log("path",writeStream.path)
+})
+writeStream.on('open', fd => console.log("文件打开啦啦啦"))
+writeStream.end(Buffer.from("今天是周三，明天是周四，后天是周五"),{encoding:'utf8'},() => {
+    console.log("结束时追加文件内容",writeStream.bytesWritten)
+    
+})
+
+
+// 文件流读取~
+// const readStream = fs.createReadStream('./input.txt',{encoding:'utf8',start:0, end: 45});
+// console.log("这是没打开前吧.....",readStream.pending)
+// readStream.on('open',(fd) => {
+//     console.log("开始读取文件",readStream.pending)
+// })
+// readStream.pause()
+// setTimeout(() => {
+//     console.log("倒计时一秒后开始读取数据.....")
+//     readStream.resume()
+// }, 1000)
+// readStream.on('ready',() => {console.log("ready状态", readStream.pending)})
+// readStream.on('data',data => {
+//     console.log("返回来的数据是",data)
+// })
+// readStream.on('end',() => {
+//     console.log("文件读取完毕", readStream.bytesRead)
+//     readStream.close();
+// })
+// readStream.on('close', () => {console.log("文件已关闭")})
+// readStream.on('error', () => console.log("文件读取失败....."))
+
 // 修改文件目录的读写权限 
 // fs.chmod('./buf.js','0740', err => tConsole(err, '', '修改权限失败', '修改权限成功'))
 // fs.fchmod(ofd,'0745', err => tConsole(err, '', '修改权限失败1', '修改权限成功1'))

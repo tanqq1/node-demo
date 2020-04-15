@@ -1,1 +1,8 @@
-这是一个input文件，今天是2020年1月2号，腊八节。
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
+hello this is  a test今天是周三，明天是周四，后天是周五
