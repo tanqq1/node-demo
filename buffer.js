@@ -50,7 +50,9 @@ bf1.copy(bf2,10,4,10);
 //缓冲区裁剪，返回一个新的缓冲区，但是指向同一块内存
 
 const bufSlice = Buffer.alloc(20);
-bufSlice.write(' this is a new year!');
+const str = 'kmld fmlkd nckjn jkkk！'
+bufSlice.write(str);
+console.log("19920",Buffer.byteLength(bufSlice), str.length)
 const bufs = bufSlice.slice(3,8);
 console.log(bufs.toString('utf8')); //is is
 bufs.write('qing');

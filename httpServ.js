@@ -1,12 +1,11 @@
 const http = require('http');
 const repl = require('repl');
+const user = require('./console');
 let con = repl.start().context;
 con.msg = 'soppp'
-console.log("%d",123, 'hello')
-console.log("%d", 'hello');
-console.info("info...")
-console.error("error....")
-
+console.log(require.resolve('./console.js'))
+// 使用delete方法清楚某个缓存后，下次会加载时会重新执行一次该模块中的代码
+delete require.cache[require.resolve('./console.js')]
 
 // http.createServer(function(req, res) {
 //     // req : 客户端请求对象
