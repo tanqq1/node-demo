@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<body>
+    <head>
+        <title>ajax请求页面</title>
+    </head>
+    <body>
+        <input type="button" value="获取数据" onclick="getData()" />
+        <div id="div"></div>
+
+    </body>
+    <script>
+        function getData(){
+            let xhr = new XMLHttpRequest()
+            xhr.open('GET',"http://localhost:4154", true)
+            // xhr.setRequestHeader("Access-Control-Allow-Origin","http://localhost")
+            xhr.onreadystatechange = e => {
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    document.getElementById("div").innerHTML = xhr.response;
+                }
+            }
+            xhr.send()
+        }
+    
+    </script>
+</body>
